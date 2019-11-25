@@ -34,7 +34,8 @@ class WebScraper
                 home_page = AGENT.get('https://mya.dominionenergy.com/')
             # Found the elements we needed using css tags and grabbed the corrct ones then added each to billing section of user data with appropriate labels
             # Several of the elements collected needed to be formatted so I created helper method for ones that could be reused
-                USER_DATA["Billing"]["Total Amount Due By"] = home_page.css("p")[0].text.split("\r\n")[1].gsub("                 ", "")
+                USER_DATA["Billing"]["Total Amount Due By"] = home_page.css("p")[0].text.split
+                ("\r\n")[1].gsub("                 ", "")
                 USER_DATA["Billing"]["Total Amount Due"] = formatHomePage(home_page.css("p"), 1)
                 USER_DATA["Billing"]["Last Payment Received On Date"] = formatHomePage(home_page.css("p"), 2)
                 USER_DATA["Billing"]["Last Payment Received Amount"] = formatHomePage(home_page.css("p"), 3)

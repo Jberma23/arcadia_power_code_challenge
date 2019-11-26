@@ -5,11 +5,13 @@ class CommandLineInterface
     def welcome
         ## Greating printed in the cli
             puts "Welcome to Dominion Energy Analyzer"
-            puts "Please enter your username for your Dominion Energy account:".colorize(:white)
+            puts "Please enter your username for your Dominion Energy account:"
             username = gets
+           
         ## Username is collected
-            puts "Please enter your password for your Dominion Energy account:".colorize(:white)
+            puts "Please enter your password for your Dominion Energy account:"
             password = gets
+       
         ## Password is collected
         ## Filtering the collected username and password because "\n" was added to the end
             user = username.split("\n")[0]

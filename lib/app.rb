@@ -4,10 +4,9 @@ require 'rubygems'
 require 'rubygems/gem_runner'
 require 'rubygems/exceptions'
 require 'mechanize'
-require 'zlib'
 require 'date'
-require 'colorize'
-require 'colorized_string'
+# require 'colorize'
+# require 'colorized_string'
 class App
     def install(lib)
         begin

@@ -2,9 +2,6 @@
 ## Instructions to run:
 * cd into `webscraper`
 * Run `gem install nokogiri` 
-* Run `gem install open-uri` 
-* Run `gem install rubygems` 
-* Run `gem install mechanize` 
 * Run `gem install date` 
 * It may take some time to begin as all gems will be installed for you
 * Once complete run `ruby bin/run`

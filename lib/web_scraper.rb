@@ -21,7 +21,7 @@ class WebScraper
             # Printing the http code to make sure we are successfully logged in
                 if result.code == "200"
                     puts "              "
-                    puts  "Login Sucessful".colorize(:green)
+                    puts  "Login Sucessful"
                     puts "_________________________"
                     HomePage()
                 else 
@@ -65,16 +65,16 @@ class WebScraper
                 puts "        "   
                 puts "Data:"
                 puts "        "
-                puts "Service Start date:" + " " + "#{USER_DATA["Service Info"]["Service-start-date"]}".colorize(:red)
+                puts "Service Start date:" + " " + "#{USER_DATA["Service Info"]["Service-start-date"]}"
                 puts "        "
-                puts "Service End date:" + " " + "#{USER_DATA["Service Info"]["Service-end-date"]}".colorize(:red)
+                puts "Service End date:" + " " + "#{USER_DATA["Service Info"]["Service-end-date"]}"
                 puts "        "
-                puts "Usage:" + " " + "#{USER_DATA["Service Info"]["Usage"]}".colorize(:red)
+                puts "Usage:" + " " + "#{USER_DATA["Service Info"]["Usage"]}"
                 puts "        "
-                puts "Bill Amount:" + " " + "#{USER_DATA["Billing"]["Current Charges Billed Amount"]}".colorize(:red)
+                puts "Bill Amount:" + " " + "#{USER_DATA["Billing"]["Current Charges Billed Amount"]}"
                 puts "        "
             #I belive this is the bill due date you mean because it is Current Charges Billed On date 
-                puts "Bill Due Date:" + " " + "#{USER_DATA["Billing"]["Current Charges Billed On"]}".colorize(:red)
+                puts "Bill Due Date:" + " " + "#{USER_DATA["Billing"]["Current Charges Billed On"]}"
         end
 
 

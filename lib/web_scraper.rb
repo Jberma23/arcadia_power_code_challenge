@@ -1,5 +1,5 @@
 require_relative 'app.rb'
-require 'byebug'
+
 class WebScraper
     AGENT = Mechanize.new
     USER_DATA = {"Billing" => {}, "Service Info" => {}}
@@ -32,7 +32,6 @@ class WebScraper
         def HomePage
             # collecting home_page and setting it to a variable
                 home_page = AGENT.get('https://mya.dominionenergy.com/')
-                byebug
             # Found the elements we needed using css tags and grabbed the corrct ones then added each to billing section of user data with appropriate labels
             # Several of the elements collected needed to be formatted so I created helper method for ones that could be reused
                 if home_page.css("p")[1].children.text = "You have entered an incorrect user name and/or password. After too many unsuccessful attempts, access to your account will be locked for one hour."

@@ -9,6 +9,7 @@ require 'rubygems/gem_runner'
 require 'rubygems/exceptions'
 require 'mechanize'
 require 'date'
+require 'byebug'
 
 CommandLineInterface.new.run
 

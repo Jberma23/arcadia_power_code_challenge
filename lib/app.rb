@@ -5,6 +5,7 @@ require 'rubygems/gem_runner'
 require 'rubygems/exceptions'
 require 'mechanize'
 require 'date'
+require 'byebug'
 # require 'colorize'
 # require 'colorized_string'
 class App

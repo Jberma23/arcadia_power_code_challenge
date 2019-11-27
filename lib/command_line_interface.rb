@@ -14,10 +14,13 @@ class CommandLineInterface
        
         ## Password is collected
         ## Filtering the collected username and password because "\n" was added to the end
-            user = username.split("\n")[0]
-            pass = password.split("\n")[0]
+            user = "abhalla1"
+            # username.split("\n")[0]
+            pass = "QxoQH5FAdVFJPqQhWa1g0qXo"
+            # password.split("\n")[0]
         ## Given User Data
         # After the data is collect the login and scraping process begins
+            
             @scraper = WebScraper.new(user, pass)
             
     end

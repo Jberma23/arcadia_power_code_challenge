@@ -1,5 +1,5 @@
 require_relative 'app.rb'
-
+require 'byebug'
 class WebScraper
     AGENT = Mechanize.new
     USER_DATA = {"Billing" => {}, "Service Info" => {}}
@@ -32,17 +32,24 @@ class WebScraper
         def HomePage
             # collecting home_page and setting it to a variable
                 home_page = AGENT.get('https://mya.dominionenergy.com/')
+                byebug
             # Found the elements we needed using css tags and grabbed the corrct ones then added each to billing section of user data with appropriate labels
             # Several of the elements collected needed to be formatted so I created helper method for ones that could be reused
+                if home_page.css("p")[1].children.text = "You have entered an incorrect user name and/or password. After too many unsuccessful attempts, access to your account will be locked for one hour."
+                    puts "You have entered an incorrect user name and/or password. After too many unsuccessful attempts, access to your account will be locked for one hour."
+                else 
+
                 USER_DATA["Billing"]["Total Amount Due By"] = home_page.css("p")[0].text.split
                 ("\r\n")[1].gsub("                 ", "")
-                USER_DATA["Billing"]["Total Amount Due"] = formatHomePage(home_page.css("p"), 1)
-                USER_DATA["Billing"]["Last Payment Received On Date"] = formatHomePage(home_page.css("p"), 2)
-                USER_DATA["Billing"]["Last Payment Received Amount"] = formatHomePage(home_page.css("p"), 3)
-                USER_DATA["Billing"]["Current Charges Billed On"] = Date.parse(formatHomePage(home_page.css("p"), 4)).strftime("%m/%d/%Y")
-                USER_DATA["Billing"]["Current Charges Billed Amount"] = formatHomePage(home_page.css("p"), 5)
-                USER_DATA["Billing"]["Next Bill Date"] = formatHomePage(home_page.css("p"), 6)
+
+                USER_DATA["Billing"]["Total Amount Due"] = home_page.css("p")[1]
+                USER_DATA["Billing"]["Last Payment Received On Date"] = home_page.css("p")[2]
+                USER_DATA["Billing"]["Last Payment Received Amount"] = home_page.css("p")[3]
+                USER_DATA["Billing"]["Current Charges Billed On"] = Date.parse(home_page.css("p")[4]).strftime("%m/%d/%Y")
+                USER_DATA["Billing"]["Current Charges Billed Amount"] = home_page.css("p")[5]
+                USER_DATA["Billing"]["Next Bill Date"] = home_page.css("p")[6]
                 usageData()
+                end
         end
         def usageData
             # Getting detailed usage page
@@ -81,8 +88,9 @@ class WebScraper
         private
             #Helper Methods      
             def formatHomePage(element, num)
+                byebug
             # used to just collect the text from each element needed. Simple but help prevent using the same code repeatedly
-                return element[num].text
+                return element[num]
             end
 
             def formatDate(string)

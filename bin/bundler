@@ -1,3 +1,0 @@
-require_relative "../lib/app.rb"
-App.new.bundler
-puts "Gems installed and loaded"

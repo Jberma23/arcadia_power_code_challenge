@@ -1,14 +1,7 @@
 #!/usr/bin/env ruby
 require_relative '../lib/web_scraper.rb'
 require_relative "../lib/command_line_interface.rb"
-require_relative "../lib/app.rb"
-require 'nokogiri'
-require 'open-uri'
-require 'rubygems'
-require 'rubygems/gem_runner'
-require 'rubygems/exceptions'
-require 'mechanize'
-require 'date'
+
 
 CommandLineInterface.new.run
 

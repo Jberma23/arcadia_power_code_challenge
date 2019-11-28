@@ -1,5 +1,12 @@
-require_relative 'app.rb'
-
+require 'nokogiri'
+require 'open-uri'
+require 'rubygems'
+require 'rubygems/gem_runner'
+require 'rubygems/exceptions'
+require 'mechanize'
+require 'date'
+require 'colorize'
+require 'colorized_string'
 class WebScraper
     AGENT = Mechanize.new
     USER_DATA = {"Billing" => {}, "Service Info" => {}}

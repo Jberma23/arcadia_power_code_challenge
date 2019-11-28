@@ -1,3 +1,14 @@
+require 'nokogiri'
+require 'open-uri'
+require 'rubygems'
+require 'rubygems/gem_runner'
+require 'rubygems/exceptions'
+require 'mechanize'
+require 'date'
+require 'colorize'
+require 'colorized_string'
+
+
 class CommandLineInterface
     def run 
         welcome
